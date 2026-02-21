@@ -1,0 +1,119 @@
+// paradyse portfolio | interactive functionality
+
+// Commission status data (will be connected to live data later)
+const commissionData = {
+  status: 'open', // open, closed, limited
+  activeCommissions: 5,
+  estimatedWait: '1-2 weeks',
+  lastUpdated: new Date().toISOString(),
+};
+
+// Update commission status on page load
+document.addEventListener('DOMContentLoaded', () => {
+  updateCommissionStatus();
+  updateStatusDate();
+});
+
+function updateCommissionStatus() {
+  const statusEl = document.querySelector('.status-text');
+  const activeCountEl = document.getElementById('active-count');
+  const waitTimeEl = document.getElementById('wait-time');
+  const indicatorEl = document.querySelector('.status-indicator');
+
+  if (!statusEl || !activeCountEl || !waitTimeEl || !indicatorEl) return;
+
+  // Set status text
+  const statusLabels = {
+    open: 'Open for Commissions',
+    limited: 'Limited Availability',
+    closed: 'Closed for Commissions',
+  };
+
+  statusEl.textContent = statusLabels[commissionData.status] || 'Open for Commissions';
+  
+  // Update indicator color
+  indicatorEl.classList.remove('status-open', 'status-warning', 'status-closed');
+  if (commissionData.status === 'open') {
+    indicatorEl.classList.add('status-open');
+  } else if (commissionData.status === 'limited') {
+    indicatorEl.classList.add('status-warning');
+  } else {
+    indicatorEl.classList.add('status-closed');
+  }
+
+  // Update counts
+  activeCountEl.textContent = commissionData.activeCommissions.toString();
+  waitTimeEl.textContent = commissionData.estimatedWait;
+}
+
+function updateStatusDate() {
+  const dateEl = document.getElementById('status-date');
+  if (dateEl) {
+    const date = new Date(commissionData.lastUpdated);
+    dateEl.textContent = date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+}
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  });
+});
+
+// Add scroll effect to navbar
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > 50) {
+    navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+  } else {
+    navbar.style.background = 'rgba(10, 10, 10, 0.9)';
+  }
+  
+  lastScroll = currentScroll;
+});
+
+// Add fade-in animation on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px',
+};
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Apply fade-in to sections
+document.querySelectorAll('.section').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(20px)';
+  section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  fadeObserver.observe(section);
+});
+
+// Console easter egg
+console.log('%cparadyse portfolio', 'font-size: 24px; font-weight: bold; color: #7c7c7c;');
+console.log('%cBuilt with ☕ and late nights.', 'font-size: 12px; color: #666;');
+console.log('%cInterested in working together? DM me on Discord.', 'font-size: 12px; color: #666;');
