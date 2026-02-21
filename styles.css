@@ -519,7 +519,7 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-.contact-method {
+.contact-method-link {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -528,15 +528,23 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: 12px;
   transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
-.contact-method:hover {
+.contact-method-link:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
 
-.contact-method.primary {
+.contact-method-link.primary {
   border-color: var(--accent);
+}
+
+.contact-method-link h4,
+.contact-method-link p {
+  color: inherit;
+  margin-bottom: 0;
 }
 
 .contact-icon {
