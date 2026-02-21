@@ -158,6 +158,32 @@ a:hover {
   margin: 0 auto;
 }
 
+.section-centered {
+  text-align: center;
+}
+
+.section-centered .about-content,
+.section-centered .status-container,
+.section-centered .contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-centered .about-stats {
+  justify-content: center;
+}
+
+.section-centered .contact-methods {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+
+.section-centered .contact-info {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  text-align: left;
+}
+
 .section-intro {
   color: var(--text-secondary);
   margin-bottom: 2rem;
