@@ -101,24 +101,56 @@ a:hover {
 
 /* Contact Button - Pulsing Glow */
 .nav-links a[href="#contact"] {
-  color: var(--accent);
-  font-weight: 600;
-  animation: contact-pulse 2s ease-in-out infinite;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(124, 124, 124, 0.3), rgba(124, 124, 124, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: contact-pulse 1.5s ease-in-out infinite;
+  position: relative;
+}
+
+.nav-links a[href="#contact"]::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(124, 124, 124, 0.2));
+  border-radius: 8px;
+  z-index: -1;
+  filter: blur(8px);
+  animation: glow-pulse 1.5s ease-in-out infinite;
 }
 
 .nav-links a[href="#contact"]:hover {
-  color: var(--accent-hover);
+  background: linear-gradient(135deg, rgba(124, 124, 124, 0.5), rgba(124, 124, 124, 0.2));
+  border-color: rgba(255, 255, 255, 0.5);
+  animation: none;
+}
+
+.nav-links a[href="#contact"]:hover::before {
   animation: none;
 }
 
 @keyframes contact-pulse {
   0%, 100% {
-    color: var(--accent);
-    text-shadow: 0 0 4px rgba(124, 124, 124, 0.3);
+    transform: scale(1);
+    border-color: rgba(255, 255, 255, 0.3);
   }
   50% {
-    color: var(--accent-hover);
-    text-shadow: 0 0 12px rgba(124, 124, 124, 0.6), 0 0 20px rgba(124, 124, 124, 0.4);
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+  50% {
+    filter: blur(16px);
+    opacity: 1;
   }
 }
 
