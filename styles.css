@@ -256,12 +256,25 @@ a:hover {
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .commissions-btn-mini:hover {
   background: linear-gradient(135deg, rgba(124, 124, 124, 0.3), rgba(124, 124, 124, 0.15));
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
+}
+
+.commissions-btn-mini:first-of-type {
+  background: linear-gradient(135deg, var(--accent), rgba(124, 124, 124, 0.8));
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--bg-primary);
+}
+
+.commissions-btn-mini:first-of-type:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
