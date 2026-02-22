@@ -4,7 +4,7 @@
 const commissionData = {
   status: 'open', // open, closed, limited
   activeCommissions: 14,
-  estimatedWait: '3-4 weeks',
+  estimatedWait: '4-6 weeks',
   lastUpdated: new Date().toISOString(),
 };
 
@@ -273,14 +273,14 @@ const activeCommissions = [
     notes: 'UGC Commission',
     partner: true
   },
-  // ⏳ AWAITING INFO (Last - can't start yet)
+  // ⏳ NOW CONFIRMED (Ready to start)
   {
     client: 'Kenton',
-    project: 'Bulk Order (Awaiting Details)',
-    rate: null,
+    project: 'Bulk Order — 4 Killers + 7 Survivors',
+    rate: 1300,
     deadline: null,
     payment: 'After',
-    notes: 'All Survivors + All Killers from Survival Game',
+    notes: '11 total characters from Survival Game',
     partner: true
   }
 ];
