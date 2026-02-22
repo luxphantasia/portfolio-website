@@ -144,3 +144,97 @@ document.querySelectorAll('.section').forEach(section => {
 console.log('%cparadyse portfolio', 'font-size: 24px; font-weight: bold; color: #7c7c7c;');
 console.log('%cBuilt with ☕ and late nights.', 'font-size: 12px; color: #666;');
 console.log('%cInterested in working together? DM me on Discord.', 'font-size: 12px; color: #666;');
+
+// Active Commissions Data
+const activeCommissions = [
+  {
+    client: 'Kenton',
+    project: 'Jester Neck Accessory (UGC)',
+    rate: 60,
+    deadline: null,
+    payment: 'Prepaid',
+    notes: 'UGC Commission'
+  },
+  {
+    client: 'Kenton',
+    project: 'Jester Smile Mask (UGC)',
+    rate: 60,
+    deadline: null,
+    payment: 'Prepaid',
+    notes: 'UGC Commission'
+  },
+  {
+    client: 'Kenton',
+    project: 'Emo Fedora (UGC)',
+    rate: 60,
+    deadline: null,
+    payment: 'Prepaid',
+    notes: 'UGC Commission'
+  },
+  {
+    client: 'Kenton',
+    project: 'Emo Swordpack (UGC)',
+    rate: 60,
+    deadline: null,
+    payment: 'Prepaid',
+    notes: 'UGC Commission'
+  },
+  {
+    client: 'Kenton',
+    project: 'Lumberjack R6 (Survival Game)',
+    rate: 200,
+    deadline: '2026-02-21T23:59:00',
+    payment: 'Prepaid',
+    notes: 'Game Commission - Prioritized'
+  }
+];
+
+// Commissions Modal Functions
+function openCommissionsModal() {
+  const modal = document.getElementById('commissions-modal');
+  const listEl = document.getElementById('commissions-list');
+  const totalEl = document.getElementById('commissions-total-amount');
+  
+  if (!modal || !listEl || !totalEl) return;
+  
+  // Populate commissions list
+  listEl.innerHTML = activeCommissions.map(comm => {
+    const deadlineDisplay = comm.deadline 
+      ? `<span class="commission-detail commission-deadline">Due: ${new Date(comm.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>`
+      : '<span class="commission-detail">No deadline</span>';
+    
+    return `
+      <div class="commission-item">
+        <div class="commission-header">
+          <span class="commission-client">${comm.client}</span>
+          <span class="commission-rate">$${comm.rate}</span>
+        </div>
+        <div class="commission-project">${comm.project}</div>
+        <div class="commission-details">
+          <span class="commission-detail commission-payment">${comm.payment}</span>
+          ${deadlineDisplay}
+        </div>
+        ${comm.notes ? `<div class="commission-details" style="border-top: none; padding-top: 0; margin-top: 0.25rem;"><span class="commission-detail">${comm.notes}</span></div>` : ''}
+      </div>
+    `;
+  }).join('');
+  
+  // Calculate and display total
+  const total = activeCommissions.reduce((sum, comm) => sum + comm.rate, 0);
+  totalEl.textContent = `$${total}`;
+  
+  // Show modal
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCommissionsModal(event) {
+  if (event) {
+    event.stopPropagation();
+  }
+  const modal = document.getElementById('commissions-modal');
+  if (!modal) return;
+  
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}

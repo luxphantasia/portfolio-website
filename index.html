@@ -278,6 +278,10 @@
         <p class="status-note">
           Status updates automatically. For rush inquiries, DM me directly.
         </p>
+
+        <button class="commissions-btn" onclick="openCommissionsModal()">
+          View Active Commissions
+        </button>
       </div>
     </section>
 
@@ -378,6 +382,20 @@
       <div class="modal-caption">
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Commissions Modal -->
+  <div id="commissions-modal" class="modal" onclick="closeCommissionsModal(event)">
+    <div class="modal-content commissions-modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeCommissionsModal()">&times;</button>
+      <h3>Active Commissions</h3>
+      <div id="commissions-list" class="commissions-list">
+        <!-- Dynamically populated -->
+      </div>
+      <div class="commissions-total">
+        <p><strong>Total Active:</strong> <span id="commissions-total-amount">$0</span></p>
       </div>
     </div>
   </div>
