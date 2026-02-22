@@ -256,6 +256,8 @@ a:hover {
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .commissions-btn-mini:hover {
