@@ -178,6 +178,7 @@ const activeCommissions = [
     payment: '% Share',
     notes: 'Revenue share percentage',
     partner: false,
+    royalty: true,
     urgent: true
   },
   // 🟡 MEDIUM PRIORITY (Easter Commissions)
@@ -286,11 +287,14 @@ function openCommissionsModal() {
     const partnerBadge = comm.partner 
       ? `<span class="partner-badge">Partner</span>`
       : '';
+    const royaltyBadge = comm.royalty 
+      ? `<span class="royalty-badge">Royalty</span>`
+      : '';
     
     return `
       <div class="commission-card${isUrgent ? ' urgent' : ''}">
         <div class="commission-card-header">
-          <span class="commission-client">${comm.client}${partnerBadge}</span>
+          <span class="commission-client">${comm.client}${partnerBadge}${royaltyBadge}</span>
         </div>
         <div class="commission-project">${comm.project}</div>
         <div class="commission-meta">
