@@ -241,13 +241,11 @@ function openCommissionsModal() {
     const partnerBadge = comm.partner 
       ? `<span class="partner-badge">Partner</span>`
       : '';
-    const rateDisplay = comm.rate !== null ? `$${comm.rate}` : 'TBD';
     
     return `
       <div class="commission-card${isUrgent ? ' urgent' : ''}">
         <div class="commission-card-header">
           <span class="commission-client">${comm.client}${partnerBadge}</span>
-          ${comm.rate !== null ? `<span class="commission-rate">${rateDisplay}</span>` : ''}
         </div>
         <div class="commission-project">${comm.project}</div>
         <div class="commission-meta">

@@ -855,6 +855,11 @@ a:hover {
   gap: 0.5rem;
 }
 
+/* Hidden - pricing removed for privacy */
+.commission-rate {
+  display: none;
+}
+
 .partner-badge {
   background: linear-gradient(135deg, #fbbf24, #d97706);
   color: #000;
