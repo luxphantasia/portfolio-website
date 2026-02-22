@@ -30,6 +30,43 @@
       <a href="#contact" class="cta-button">Commission Me</a>
     </section>
 
+    <!-- Commission Status Section -->
+    <section id="status" class="section section-centered hero-status">
+      <h2>Commission Status</h2>
+      <div class="status-container">
+        <div class="status-card">
+          <div class="status-indicator status-open"></div>
+          <div class="status-info">
+            <h3>Current Status</h3>
+            <p class="status-text">Open for Commissions</p>
+            <small>Updated: <span id="status-date">Loading...</span></small>
+          </div>
+        </div>
+        
+        <div class="queue-info">
+          <h4>Current Queue</h4>
+          <div class="queue-bars">
+            <div class="queue-bar">
+              <span class="queue-label">Active Commissions</span>
+              <span class="queue-count" id="active-count">Loading...</span>
+            </div>
+            <div class="queue-bar">
+              <span class="queue-label">Estimated Wait</span>
+              <span class="queue-count" id="wait-time">Loading...</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="status-note">
+          Status updates automatically. For rush inquiries, DM me directly.
+        </p>
+
+        <button class="commissions-btn" onclick="openCommissionsModal()">
+          View Queue
+        </button>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="section section-centered">
       <h2>About</h2>
@@ -245,43 +282,6 @@
             <small>Check back for drops</small>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Commission Status Section -->
-    <section id="status" class="section section-centered">
-      <h2>Commission Status</h2>
-      <div class="status-container">
-        <div class="status-card">
-          <div class="status-indicator status-open"></div>
-          <div class="status-info">
-            <h3>Current Status</h3>
-            <p class="status-text">Open for Commissions</p>
-            <small>Updated: <span id="status-date">Loading...</span></small>
-          </div>
-        </div>
-        
-        <div class="queue-info">
-          <h4>Current Queue</h4>
-          <div class="queue-bars">
-            <div class="queue-bar">
-              <span class="queue-label">Active Commissions</span>
-              <span class="queue-count" id="active-count">Loading...</span>
-            </div>
-            <div class="queue-bar">
-              <span class="queue-label">Estimated Wait</span>
-              <span class="queue-count" id="wait-time">Loading...</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="status-note">
-          Status updates automatically. For rush inquiries, DM me directly.
-        </p>
-
-        <button class="commissions-btn" onclick="openCommissionsModal()">
-          Commission Queue
-        </button>
       </div>
     </section>
 

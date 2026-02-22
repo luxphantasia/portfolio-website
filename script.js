@@ -153,7 +153,8 @@ const activeCommissions = [
     rate: 60,
     deadline: null,
     payment: 'Prepaid',
-    notes: 'UGC Commission'
+    notes: 'UGC Commission',
+    partner: true
   },
   {
     client: 'Kenton',
@@ -161,7 +162,8 @@ const activeCommissions = [
     rate: 60,
     deadline: null,
     payment: 'Prepaid',
-    notes: 'UGC Commission'
+    notes: 'UGC Commission',
+    partner: true
   },
   {
     client: 'Kenton',
@@ -169,7 +171,8 @@ const activeCommissions = [
     rate: 60,
     deadline: null,
     payment: 'Prepaid',
-    notes: 'UGC Commission'
+    notes: 'UGC Commission',
+    partner: true
   },
   {
     client: 'Kenton',
@@ -177,7 +180,8 @@ const activeCommissions = [
     rate: 60,
     deadline: null,
     payment: 'Prepaid',
-    notes: 'UGC Commission'
+    notes: 'UGC Commission',
+    partner: true
   },
   {
     client: 'Kenton',
@@ -185,7 +189,8 @@ const activeCommissions = [
     rate: 200,
     deadline: '2026-02-21T23:59:00',
     payment: 'Prepaid',
-    notes: 'Game Commission - Prioritized'
+    notes: 'Game Commission - Prioritized',
+    partner: true
   }
 ];
 
@@ -205,11 +210,14 @@ function openCommissionsModal() {
     const deadlineDisplay = hasDeadline
       ? deadlineObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
       : '—';
+    const partnerBadge = comm.partner 
+      ? `<span class="partner-badge">Partner</span>`
+      : '';
     
     return `
       <div class="commission-card${isUrgent ? ' urgent' : ''}">
         <div class="commission-card-header">
-          <span class="commission-client">${comm.client}</span>
+          <span class="commission-client">${comm.client}${partnerBadge}</span>
           <span class="commission-rate">$${comm.rate}</span>
         </div>
         <div class="commission-project">${comm.project}</div>
