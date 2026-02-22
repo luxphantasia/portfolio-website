@@ -99,6 +99,29 @@ a:hover {
   color: var(--text-primary);
 }
 
+/* Contact Button - Pulsing Glow */
+.nav-links a[href="#contact"] {
+  color: var(--accent);
+  font-weight: 600;
+  animation: contact-pulse 2s ease-in-out infinite;
+}
+
+.nav-links a[href="#contact"]:hover {
+  color: var(--accent-hover);
+  animation: none;
+}
+
+@keyframes contact-pulse {
+  0%, 100% {
+    color: var(--accent);
+    text-shadow: 0 0 4px rgba(124, 124, 124, 0.3);
+  }
+  50% {
+    color: var(--accent-hover);
+    text-shadow: 0 0 12px rgba(124, 124, 124, 0.6), 0 0 20px rgba(124, 124, 124, 0.4);
+  }
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
