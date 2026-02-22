@@ -1038,61 +1038,49 @@ a:hover {
   font-size: 1.1rem;
 }
 
-/* Contact - Horizontal Layout */
-.contact-methods-horizontal {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 600px) {
-  .contact-methods-horizontal {
-    grid-template-columns: 1fr;
-  }
-}
-
-.contact-method-card {
+/* Contact - Direct CTA (Option C) */
+.contact-cta-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1.25rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  margin-top: 1.5rem;
+}
+
+.contact-cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), rgba(124, 124, 124, 0.8));
+  color: var(--bg-primary);
+  padding: 1rem 2.5rem;
   border-radius: 10px;
-  transition: all 0.2s ease;
+  font-weight: 700;
+  font-size: 1.05rem;
   text-decoration: none;
-  color: inherit;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.contact-method-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+.contact-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
 }
 
-.contact-method-card.primary {
-  border-color: var(--accent);
-  background: linear-gradient(135deg, rgba(124, 124, 124, 0.15), rgba(124, 124, 124, 0.05));
-}
-
-.contact-method-card h4 {
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-  font-size: 1rem;
-}
-
-.contact-method-card p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 0;
-}
-
-.contact-method-card small {
+.contact-email-link {
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.contact-email-link a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-email-link a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 /* Legacy .contact-methods for backwards compat */
