@@ -126,8 +126,10 @@
       </p>
       <div class="portfolio-grid">
         <!-- Portfolio Item 1 -->
-        <div class="portfolio-item">
-          <img src="tsuki-moon-soul-eater.png" alt="Tsuki Moon from Soul Eater - Chrome 3D Render" class="portfolio-image">
+        <div class="portfolio-item" onclick="openModal('tsuki-moon-soul-eater.png', 'Tsuki — Soul Eater', 'Chrome 3D render of the moon from Soul Eater. Stylized character work with reflective chrome finish.')">
+          <div class="portfolio-image-container">
+            <img src="tsuki-moon-soul-eater.png" alt="Tsuki Moon from Soul Eater - Chrome 3D Render" class="portfolio-image">
+          </div>
           <div class="portfolio-info">
             <h4>Tsuki — Soul Eater</h4>
             <p>Chrome 3D render of the moon from Soul Eater. Stylized character work with reflective chrome finish.</p>
@@ -320,6 +322,18 @@
       </div>
     </section>
   </main>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event)">&times;</span>
+      <img id="modal-image" class="modal-image" src="" alt="">
+      <div class="modal-caption">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2026 paradyse. All rights reserved.</p>

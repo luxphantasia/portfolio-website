@@ -90,6 +90,33 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
+// Image Modal Functions
+function openModal(imageSrc, title, description) {
+  const modal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDescription = document.getElementById('modal-description');
+
+  if (!modal || !modalImage || !modalTitle || !modalDescription) return;
+
+  modalImage.src = imageSrc;
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event) {
+  if (event) {
+    event.stopPropagation();
+  }
+  const modal = document.getElementById('image-modal');
+  if (!modal) return;
+
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 // Add fade-in animation on scroll
 const observerOptions = {
   threshold: 0.1,
@@ -97,7 +124,6 @@ const observerOptions = {
 };
 
 const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
