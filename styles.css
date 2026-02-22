@@ -464,11 +464,7 @@ a:hover {
   height: auto;
   display: block;
   border-radius: 4px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(0, 0, 0, 0.3);
-  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-item.placeholder {
