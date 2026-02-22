@@ -145,8 +145,79 @@ console.log('%cparadyse portfolio', 'font-size: 24px; font-weight: bold; color: 
 console.log('%cBuilt with ☕ and late nights.', 'font-size: 12px; color: #666;');
 console.log('%cInterested in working together? DM me on Discord.', 'font-size: 12px; color: #666;');
 
-// Active Commissions Data
+// Active Commissions Data - Sorted by Priority
+// Priority order: 1) Due within 24h, 2) High priority, 3) Medium priority, 4) Due 2+ days, 5) Normal
 const activeCommissions = [
+  // 🔴 DUE WITHIN 24 HOURS (Highest Priority)
+  {
+    client: 'Kenton',
+    project: 'R6 Rig',
+    rate: 200,
+    deadline: '2026-02-23T23:59:00',
+    payment: 'Prepaid',
+    notes: 'R6 Character Rig — Due Tomorrow',
+    partner: true,
+    urgent: true
+  },
+  // 🔴 HIGH PRIORITY (No immediate deadline)
+  {
+    client: 'Combat Warriors',
+    project: 'VFX Wave Model',
+    rate: 200,
+    deadline: null,
+    payment: 'After',
+    notes: 'Realistic texture',
+    partner: false,
+    urgent: true
+  },
+  {
+    client: 'Anime Overload',
+    project: 'Sci-Fi Excavation Crate',
+    rate: null,
+    deadline: null,
+    payment: '% Share',
+    notes: 'Revenue share percentage',
+    partner: false,
+    urgent: true
+  },
+  // 🟡 MEDIUM PRIORITY (Easter Commissions)
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Spear',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Easter Egg Grenade',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Dragon Slayer',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
+  },
+  // ⚪ NORMAL PRIORITY (No deadline, standard queue)
+  {
+    client: 'Kenton',
+    project: 'Reaper R6',
+    rate: 200,
+    deadline: null,
+    payment: 'After',
+    notes: 'Mysterious face, only glowing red eyes visible',
+    partner: true
+  },
   {
     client: 'Kenton',
     project: 'Jester Neck Accessory (UGC)',
@@ -183,34 +254,7 @@ const activeCommissions = [
     notes: 'UGC Commission',
     partner: true
   },
-  {
-    client: 'Kenton',
-    project: 'R6 Rig',
-    rate: 200,
-    deadline: '2026-02-23T23:59:00',
-    payment: 'Prepaid',
-    notes: 'R6 Character Rig',
-    partner: true
-  },
-  {
-    client: 'Kenton',
-    project: 'Reaper R6',
-    rate: 200,
-    deadline: null,
-    payment: 'After',
-    notes: 'Mysterious face, only glowing red eyes visible',
-    partner: true
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'VFX Wave Model',
-    rate: 200,
-    deadline: null,
-    payment: 'After',
-    notes: 'Realistic texture — High Priority',
-    partner: false,
-    urgent: true
-  },
+  // ⏳ AWAITING INFO (Last - can't start yet)
   {
     client: 'Kenton',
     project: 'Bulk Order (Awaiting Details)',
@@ -219,43 +263,6 @@ const activeCommissions = [
     payment: 'After',
     notes: 'All Survivors + All Killers from Survival Game',
     partner: true
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Spear',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Easter Egg Grenade',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Dragon Slayer',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
-  },
-  {
-    client: 'Anime Overload',
-    project: 'Sci-Fi Excavation Crate',
-    rate: null,
-    deadline: null,
-    payment: '% Share',
-    notes: 'High Priority — Revenue share percentage',
-    partner: false,
-    urgent: true
   }
 ];
 
@@ -267,11 +274,12 @@ function openCommissionsModal() {
   
   if (!modal || !gridEl || !totalEl) return;
   
-  // Populate commissions grid
+  // Populate commissions grid (already sorted by priority in array)
   gridEl.innerHTML = activeCommissions.map(comm => {
     const hasDeadline = comm.deadline !== null;
     const deadlineObj = comm.deadline ? new Date(comm.deadline) : null;
-    const isUrgent = (comm.urgent) || (hasDeadline && deadlineObj.getTime() - Date.now() < 24 * 60 * 60 * 1000);
+    // Mark urgent if flagged OR due within 48 hours
+    const isUrgent = (comm.urgent) || (hasDeadline && deadlineObj.getTime() - Date.now() < 48 * 60 * 60 * 1000);
     const deadlineDisplay = hasDeadline
       ? deadlineObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
       : '—';
