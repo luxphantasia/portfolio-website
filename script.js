@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 11,
+  activeCommissions: 12,
   estimatedWait: '3-4 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -246,6 +246,16 @@ const activeCommissions = [
     payment: 'After',
     notes: 'Easter Commission',
     partner: false
+  },
+  {
+    client: 'Anime Overload',
+    project: 'Sci-Fi Excavation Crate',
+    rate: null,
+    deadline: null,
+    payment: '% Share',
+    notes: 'High Priority — Revenue share percentage',
+    partner: false,
+    urgent: true
   }
 ];
 
