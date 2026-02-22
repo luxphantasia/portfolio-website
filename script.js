@@ -3,8 +3,8 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 5,
-  estimatedWait: '1-2 weeks',
+  activeCommissions: 8,
+  estimatedWait: '2-3 weeks',
   lastUpdated: new Date().toISOString(),
 };
 
@@ -185,11 +185,39 @@ const activeCommissions = [
   },
   {
     client: 'Kenton',
-    project: 'Lumberjack R6 (Survival Game)',
+    project: 'R6 Rig',
     rate: 200,
-    deadline: '2026-02-21T23:59:00',
+    deadline: '2026-02-23T23:59:00',
     payment: 'Prepaid',
-    notes: 'Game Commission - Prioritized',
+    notes: 'R6 Character Rig',
+    partner: true
+  },
+  {
+    client: 'Kenton',
+    project: 'Reaper R6',
+    rate: 200,
+    deadline: null,
+    payment: 'After',
+    notes: 'Mysterious face, only glowing red eyes visible',
+    partner: true
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'VFX Wave Model',
+    rate: 200,
+    deadline: null,
+    payment: 'After',
+    notes: 'Realistic texture — High Priority',
+    partner: false,
+    urgent: true
+  },
+  {
+    client: 'Kenton',
+    project: 'Bulk Order (Awaiting Details)',
+    rate: null,
+    deadline: null,
+    payment: 'After',
+    notes: 'All Survivors + All Killers from Survival Game',
     partner: true
   }
 ];
@@ -206,18 +234,20 @@ function openCommissionsModal() {
   gridEl.innerHTML = activeCommissions.map(comm => {
     const hasDeadline = comm.deadline !== null;
     const deadlineObj = comm.deadline ? new Date(comm.deadline) : null;
-    const isUrgent = hasDeadline && deadlineObj.getTime() - Date.now() < 24 * 60 * 60 * 1000;
+    const isUrgent = (comm.urgent) || (hasDeadline && deadlineObj.getTime() - Date.now() < 24 * 60 * 60 * 1000);
     const deadlineDisplay = hasDeadline
       ? deadlineObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
       : '—';
     const partnerBadge = comm.partner 
       ? `<span class="partner-badge">Partner</span>`
       : '';
+    const rateDisplay = comm.rate !== null ? `$${comm.rate}` : 'TBD';
     
     return `
       <div class="commission-card${isUrgent ? ' urgent' : ''}">
         <div class="commission-card-header">
           <span class="commission-client">${comm.client}${partnerBadge}</span>
+          ${comm.rate !== null ? `<span class="commission-rate">${rateDisplay}</span>` : ''}
         </div>
         <div class="commission-project">${comm.project}</div>
         <div class="commission-meta">
