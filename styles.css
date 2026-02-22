@@ -1038,42 +1038,68 @@ a:hover {
   font-size: 1.1rem;
 }
 
-.contact-methods {
+/* Contact - Horizontal Layout */
+.contact-methods-horizontal {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.contact-method-link {
+@media (max-width: 600px) {
+  .contact-methods-horizontal {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-method-card {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   transition: all 0.2s ease;
   text-decoration: none;
   color: inherit;
 }
 
-.contact-method-link:hover {
+.contact-method-card:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
 
-.contact-method-link.primary {
+.contact-method-card.primary {
   border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(124, 124, 124, 0.15), rgba(124, 124, 124, 0.05));
 }
 
-.contact-method-link h4,
-.contact-method-link p {
-  color: inherit;
+.contact-method-card h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.contact-method-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   margin-bottom: 0;
 }
 
-.contact-icon {
-  font-size: 2rem;
+.contact-method-card small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Legacy .contact-methods for backwards compat */
+.contact-methods {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .contact-method h4 {

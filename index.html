@@ -26,11 +26,34 @@
     <section class="hero">
       <h1>paradyse</h1>
       <p class="hero-subtitle">Senior 3D Generalist & Character Artist</p>
+
+      <!-- Commission Status Bar -->
+      <div class="commission-status-bar">
+        <div class="status-indicator-wrapper">
+          <div class="status-indicator-mini status-open"></div>
+          <span class="status-text-mini">Open for Commissions</span>
+        </div>
+        
+        <div class="queue-stats">
+          <div class="queue-stat">
+            <span class="queue-stat-count" id="active-count">5</span>
+            <span class="queue-stat-label">Active</span>
+          </div>
+          <div class="queue-stat-divider"></div>
+          <div class="queue-stat">
+            <span class="queue-stat-count" id="wait-time">1-2 wks</span>
+            <span class="queue-stat-label">Wait</span>
+          </div>
+        </div>
+
+        <button class="commissions-btn-mini" onclick="openCommissionsModal()">
+          View Queue
+        </button>
+      </div>
+
       <p class="hero-tagline">Making cool shit since 2021</p>
       <a href="#contact" class="cta-button">Commission Me</a>
     </section>
-
-    <!-- Commission Status Bar -->
     <div class="commission-status-bar">
       <div class="status-indicator-wrapper">
         <div class="status-indicator-mini status-open"></div>
@@ -321,21 +344,19 @@
       <h2>Contact</h2>
       <div class="contact-container">
         <p class="contact-intro">
-          Interested in working together? Reach out via Discord or email with your project details.
+          Interested in working together? Reach out with your project details.
         </p>
         
-        <div class="contact-methods">
-          <a href="https://discord.gg/R2pgbrYWY8" target="_blank" rel="noopener" class="contact-method-link primary">
-            <span class="contact-icon">💬</span>
+        <div class="contact-methods-horizontal">
+          <a href="https://discord.gg/R2pgbrYWY8" target="_blank" rel="noopener" class="contact-method-card primary">
             <div>
               <h4>Discord Server</h4>
-              <p>Join & DM me</p>
+              <p>Join & DM me directly</p>
               <small>Fastest response time</small>
             </div>
           </a>
 
-          <a href="mailto:luxphantasia@gmail.com" class="contact-method-link">
-            <span class="contact-icon">📧</span>
+          <a href="mailto:luxphantasia@gmail.com" class="contact-method-card">
             <div>
               <h4>Email</h4>
               <p>luxphantasia@gmail.com</p>

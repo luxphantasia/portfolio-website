@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateCommissionStatus() {
-  const statusEl = document.querySelector('.status-text');
+  const statusEl = document.querySelector('.status-text-mini');
   const activeCountEl = document.getElementById('active-count');
   const waitTimeEl = document.getElementById('wait-time');
-  const indicatorEl = document.querySelector('.status-indicator');
+  const indicatorEl = document.querySelector('.status-indicator-mini');
 
   if (!statusEl || !activeCountEl || !waitTimeEl || !indicatorEl) return;
 
