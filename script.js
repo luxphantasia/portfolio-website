@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 12,
+  activeCommissions: 14,
   estimatedWait: '3-4 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -207,6 +207,24 @@ const activeCommissions = [
     deadline: null,
     payment: 'After',
     notes: 'Easter Commission',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Katar',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Sea Beast Bunny',
+    rate: null,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission — Pending details',
     partner: false
   },
   // ⚪ NORMAL PRIORITY (No deadline, standard queue)
