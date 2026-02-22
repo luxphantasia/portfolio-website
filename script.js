@@ -218,7 +218,6 @@ function openCommissionsModal() {
       <div class="commission-card${isUrgent ? ' urgent' : ''}">
         <div class="commission-card-header">
           <span class="commission-client">${comm.client}${partnerBadge}</span>
-          <span class="commission-rate">$${comm.rate}</span>
         </div>
         <div class="commission-project">${comm.project}</div>
         <div class="commission-meta">
@@ -235,9 +234,11 @@ function openCommissionsModal() {
     `;
   }).join('');
   
-  // Calculate and display total
-  const total = activeCommissions.reduce((sum, comm) => sum + comm.rate, 0);
-  totalEl.textContent = `$${total}`;
+  // Hide total section (not needed anymore)
+  const totalSection = document.querySelector('.commissions-total');
+  if (totalSection) {
+    totalSection.style.display = 'none';
+  }
   
   // Show modal
   modal.classList.add('active');
