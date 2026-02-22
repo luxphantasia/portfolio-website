@@ -3,8 +3,8 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 8,
-  estimatedWait: '2-3 weeks',
+  activeCommissions: 11,
+  estimatedWait: '3-4 weeks',
   lastUpdated: new Date().toISOString(),
 };
 
@@ -219,6 +219,33 @@ const activeCommissions = [
     payment: 'After',
     notes: 'All Survivors + All Killers from Survival Game',
     partner: true
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Spear',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Easter Egg Grenade',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Dragon Slayer',
+    rate: 60,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission',
+    partner: false
   }
 ];
 
