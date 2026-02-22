@@ -193,7 +193,7 @@ const activeCommissions = [
   },
   {
     client: 'Combat Warriors',
-    project: 'Easter Egg Grenade',
+    project: 'Easter Egg Grenade (Impact)',
     rate: 60,
     deadline: null,
     payment: 'After',
