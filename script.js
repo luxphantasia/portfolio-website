@@ -165,10 +165,11 @@ const activeCommissions = [
     project: 'VFX Wave Model',
     rate: 200,
     deadline: null,
-    payment: 'After',
-    notes: 'Realistic texture',
+    payment: 'Delivered — Awaiting Approval',
+    notes: 'Realistic texture — Asking $60-80 after dev confirmation',
     partner: false,
-    urgent: true
+    urgent: true,
+    delivered: true
   },
   {
     client: 'Anime Overload',
