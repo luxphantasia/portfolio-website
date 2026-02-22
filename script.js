@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 14,
+  activeCommissions: 13,
   estimatedWait: '4-6 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -229,15 +229,6 @@ const activeCommissions = [
     partner: false
   },
   // ⚪ NORMAL PRIORITY (No deadline, standard queue)
-  {
-    client: 'Kenton',
-    project: 'Reaper R6',
-    rate: 200,
-    deadline: null,
-    payment: 'After',
-    notes: 'Mysterious face, only glowing red eyes visible',
-    partner: true
-  },
   {
     client: 'Kenton',
     project: 'Jester Neck Accessory (UGC)',
