@@ -667,32 +667,55 @@ a:hover {
 
 /* Commissions Modal */
 .commissions-modal-content {
-  max-width: 600px;
+  max-width: 900px;
   max-height: 80vh;
   overflow-y: auto;
 }
 
-.commissions-list {
+.commissions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   margin: 1.5rem 0;
 }
 
-.commission-item {
+@media (max-width: 768px) {
+  .commissions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .commissions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.commission-card {
   background: var(--bg-tertiary);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
 }
 
-.commission-item:last-child {
-  margin-bottom: 0;
+.commission-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
-.commission-header {
+.commission-card.urgent {
+  border-color: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+}
+
+.commission-card-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .commission-client {
@@ -702,38 +725,50 @@ a:hover {
 }
 
 .commission-rate {
+  background: rgba(124, 124, 124, 0.2);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
   color: var(--accent);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .commission-project {
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  flex-grow: 1;
 }
 
-.commission-details {
+.commission-meta {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--border);
 }
 
-.commission-detail {
-  font-size: 0.85rem;
+.commission-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.commission-meta-label {
   color: var(--text-muted);
 }
 
-.commission-deadline {
-  color: #ef4444;
-  font-weight: 600;
+.commission-meta-value {
+  font-weight: 500;
 }
 
-.commission-payment {
+.commission-meta-value.payment {
   color: #22c55e;
+}
+
+.commission-meta-value.deadline {
+  color: #ef4444;
   font-weight: 600;
 }
 
@@ -748,7 +783,7 @@ a:hover {
 
 .commissions-total p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .commissions-total strong {

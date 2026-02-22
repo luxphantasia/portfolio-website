@@ -192,29 +192,37 @@ const activeCommissions = [
 // Commissions Modal Functions
 function openCommissionsModal() {
   const modal = document.getElementById('commissions-modal');
-  const listEl = document.getElementById('commissions-list');
+  const gridEl = document.getElementById('commissions-grid');
   const totalEl = document.getElementById('commissions-total-amount');
   
-  if (!modal || !listEl || !totalEl) return;
+  if (!modal || !gridEl || !totalEl) return;
   
-  // Populate commissions list
-  listEl.innerHTML = activeCommissions.map(comm => {
-    const deadlineDisplay = comm.deadline 
-      ? `<span class="commission-detail commission-deadline">Due: ${new Date(comm.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>`
-      : '<span class="commission-detail">No deadline</span>';
+  // Populate commissions grid
+  gridEl.innerHTML = activeCommissions.map(comm => {
+    const hasDeadline = comm.deadline !== null;
+    const deadlineObj = comm.deadline ? new Date(comm.deadline) : null;
+    const isUrgent = hasDeadline && deadlineObj.getTime() - Date.now() < 24 * 60 * 60 * 1000;
+    const deadlineDisplay = hasDeadline
+      ? deadlineObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      : '—';
     
     return `
-      <div class="commission-item">
-        <div class="commission-header">
+      <div class="commission-card${isUrgent ? ' urgent' : ''}">
+        <div class="commission-card-header">
           <span class="commission-client">${comm.client}</span>
           <span class="commission-rate">$${comm.rate}</span>
         </div>
         <div class="commission-project">${comm.project}</div>
-        <div class="commission-details">
-          <span class="commission-detail commission-payment">${comm.payment}</span>
-          ${deadlineDisplay}
+        <div class="commission-meta">
+          <div class="commission-meta-row">
+            <span class="commission-meta-label">Payment</span>
+            <span class="commission-meta-value payment">${comm.payment}</span>
+          </div>
+          <div class="commission-meta-row">
+            <span class="commission-meta-label">Deadline</span>
+            <span class="commission-meta-value${isUrgent ? ' deadline' : ''}">${deadlineDisplay}</span>
+          </div>
         </div>
-        ${comm.notes ? `<div class="commission-details" style="border-top: none; padding-top: 0; margin-top: 0.25rem;"><span class="commission-detail">${comm.notes}</span></div>` : ''}
       </div>
     `;
   }).join('');
