@@ -148,6 +148,18 @@ console.log('%cInterested in working together? DM me on Discord.', 'font-size: 1
 // Active Commissions Data - Sorted by Priority
 // Priority order: 1) Due within 24h, 2) High priority, 3) Medium priority, 4) Due 2+ days, 5) Normal
 const activeCommissions = [
+  // 🔴 DUE WITHIN 24 HOURS (Highest Priority)
+  {
+    client: 'Anime Overload',
+    project: 'Sci-Fi Excavation Crate',
+    rate: null,
+    deadline: '2026-02-23T23:59:00',
+    payment: '% Share',
+    notes: 'Revenue share — Due Tomorrow',
+    partner: false,
+    royalty: true,
+    urgent: true
+  },
   // 🔴 HIGH PRIORITY (No immediate deadline)
   {
     client: 'Combat Warriors',
@@ -159,17 +171,6 @@ const activeCommissions = [
     partner: false,
     urgent: true,
     delivered: true
-  },
-  {
-    client: 'Anime Overload',
-    project: 'Sci-Fi Excavation Crate',
-    rate: null,
-    deadline: null,
-    payment: '% Share',
-    notes: 'Revenue share percentage',
-    partner: false,
-    royalty: true,
-    urgent: true
   },
   // 🟡 MEDIUM PRIORITY (Easter Commissions)
   {
