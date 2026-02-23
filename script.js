@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 13,
+  activeCommissions: 12,
   estimatedWait: '4-6 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -148,17 +148,6 @@ console.log('%cInterested in working together? DM me on Discord.', 'font-size: 1
 // Active Commissions Data - Sorted by Priority
 // Priority order: 1) Due within 24h, 2) High priority, 3) Medium priority, 4) Due 2+ days, 5) Normal
 const activeCommissions = [
-  // 🔴 DUE WITHIN 24 HOURS (Highest Priority)
-  {
-    client: 'Kenton',
-    project: 'R6 Rig',
-    rate: 200,
-    deadline: '2026-02-23T23:59:00',
-    payment: 'Prepaid',
-    notes: 'R6 Character Rig — Due Tomorrow',
-    partner: true,
-    urgent: true
-  },
   // 🔴 HIGH PRIORITY (No immediate deadline)
   {
     client: 'Combat Warriors',
