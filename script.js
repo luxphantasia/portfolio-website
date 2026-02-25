@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 11,
+  activeCommissions: 8,
   estimatedWait: '4-6 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -217,42 +217,16 @@ const activeCommissions = [
     notes: 'Easter Commission — Pending details',
     partner: false
   },
-  // ⚪ NORMAL PRIORITY (UGC — Prepaid)
+  // ⚪ NORMAL PRIORITY (UGC Bundle — Prepaid)
   {
     client: 'Kenton',
-    project: 'Jester Neck Accessory (UGC)',
-    rate: 60,
+    project: 'UGC Bundle — 4 Items (Jester Neck, Smile Mask, Emo Fedora, Emo Swordpack)',
+    rate: 240,
     deadline: null,
     payment: 'Prepaid',
-    notes: 'UGC Commission',
-    partner: true
-  },
-  {
-    client: 'Kenton',
-    project: 'Jester Smile Mask (UGC)',
-    rate: 60,
-    deadline: null,
-    payment: 'Prepaid',
-    notes: 'UGC Commission',
-    partner: true
-  },
-  {
-    client: 'Kenton',
-    project: 'Emo Fedora (UGC)',
-    rate: 60,
-    deadline: null,
-    payment: 'Prepaid',
-    notes: 'UGC Commission',
-    partner: true
-  },
-  {
-    client: 'Kenton',
-    project: 'Emo Swordpack (UGC)',
-    rate: 60,
-    deadline: null,
-    payment: 'Prepaid',
-    notes: 'UGC Commission',
-    partner: true
+    notes: '4 UGC commissions bundled — All prepaid',
+    partner: true,
+    bundle: true
   }
 ];
 
