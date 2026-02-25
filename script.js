@@ -146,45 +146,44 @@ console.log('%cBuilt with ☕ and late nights.', 'font-size: 12px; color: #666;'
 console.log('%cInterested in working together? DM me on Discord.', 'font-size: 12px; color: #666;');
 
 // Active Commissions Data - Sorted by Priority
-// Priority order: 1) Due within 24h, 2) High priority, 3) Medium priority, 4) Due 2+ days, 5) Normal
+// Priority order: 1) Bulk/Confirmed, 2) Delivered awaiting payment, 3) High priority, 4) Medium priority, 5) Normal
 const activeCommissions = [
-  // 🔴 DUE WITHIN 24 HOURS (Highest Priority)
+  // 💜 TOP PRIORITY — Bulk Order (Now at TOP of queue)
   {
-    client: 'Anime Overload',
-    project: 'Sci-Fi Excavation Crate',
-    rate: null,
-    deadline: '2026-02-23T23:59:00',
-    payment: '% Share',
-    notes: 'Revenue share — Due Tomorrow',
-    partner: false,
-    royalty: true,
-    urgent: true
+    client: 'Kenton',
+    project: 'Bulk Order — 4 Killers + 8 Survivors',
+    rate: 1400,
+    deadline: null,
+    payment: 'After',
+    notes: '12 total characters from Survival Game — CONFIRMED',
+    partner: true,
+    topPriority: true
   },
-  // 🔴 HIGH PRIORITY (No immediate deadline)
+  // ✅ DELIVERED — Awaiting Payment
   {
     client: 'Combat Warriors',
     project: 'VFX Wave Model',
-    rate: 200,
+    rate: 70,
     deadline: null,
-    payment: 'Delivered — Awaiting Approval',
-    notes: 'Realistic texture — Asking $60-80 after dev confirmation',
+    payment: 'Delivered — Awaiting Payment',
+    notes: 'Realistic texture — Ready to invoice ($60-80)',
     partner: false,
-    urgent: true,
     delivered: true
-  },
-  // 🟡 MEDIUM PRIORITY (Easter Commissions)
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Spear',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
   },
   {
     client: 'Combat Warriors',
     project: 'Easter Egg Grenade (Impact)',
+    rate: 70,
+    deadline: null,
+    payment: 'Delivered — Awaiting Payment (Easter Batch)',
+    notes: 'Easter Commission — DONE, payment after all Easter items complete',
+    partner: false,
+    delivered: true
+  },
+  // 🟡 MEDIUM PRIORITY (Easter Commissions — In Progress)
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Spear',
     rate: 60,
     deadline: null,
     payment: 'After',
@@ -218,7 +217,7 @@ const activeCommissions = [
     notes: 'Easter Commission — Pending details',
     partner: false
   },
-  // ⚪ NORMAL PRIORITY (No deadline, standard queue)
+  // ⚪ NORMAL PRIORITY (UGC — Prepaid)
   {
     client: 'Kenton',
     project: 'Jester Neck Accessory (UGC)',
@@ -253,16 +252,6 @@ const activeCommissions = [
     deadline: null,
     payment: 'Prepaid',
     notes: 'UGC Commission',
-    partner: true
-  },
-  // ⏳ NOW CONFIRMED (Ready to start)
-  {
-    client: 'Kenton',
-    project: 'Bulk Order — 4 Killers + 7 Survivors',
-    rate: 1300,
-    deadline: null,
-    payment: 'After',
-    notes: '11 total characters from Survival Game',
     partner: true
   }
 ];
