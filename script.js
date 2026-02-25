@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 12,
+  activeCommissions: 11,
   estimatedWait: '4-6 weeks',
   lastUpdated: new Date().toISOString(),
 };
