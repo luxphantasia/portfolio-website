@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 4,
+  activeCommissions: 5,
   estimatedWait: '1-2 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -158,6 +158,76 @@ const activeCommissions = [
     notes: '7 of 11 characters completed — 4 Killers left in queue',
     partner: true,
     topPriority: true
+  },
+  // ✅ DELIVERED — Awaiting Payment
+  {
+    client: 'Combat Warriors',
+    project: 'VFX Wave Model',
+    rate: 70,
+    deadline: null,
+    payment: 'Delivered — Awaiting Payment',
+    notes: 'Realistic texture — Ready to invoice ($60-80)',
+    partner: false,
+    delivered: true
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Easter Egg Grenade (Impact)',
+    rate: 70,
+    deadline: null,
+    payment: 'Delivered — Awaiting Payment (Easter Batch)',
+    notes: 'Easter Commission — DONE, payment after all Easter items complete',
+    partner: false,
+    delivered: true
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Dragon Slayer',
+    rate: 90,
+    deadline: null,
+    payment: 'Delivered — Awaiting Payment (Easter Batch)',
+    notes: 'Easter Commission — DONE',
+    partner: false,
+    delivered: true
+  },
+  // 🟡 MEDIUM PRIORITY (Easter Commissions — In Progress)
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Spear',
+    rate: 80,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission — In Progress',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Carrot Katar',
+    rate: 80,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission — In Progress',
+    partner: false
+  },
+  {
+    client: 'Combat Warriors',
+    project: 'Sea Beast Bunny',
+    rate: 200,
+    deadline: null,
+    payment: 'After',
+    notes: 'Easter Commission — Pending details',
+    partner: false
+  },
+  // ⚪ NORMAL PRIORITY (UGC Bundle — Prepaid)
+  {
+    client: 'Kenton',
+    project: 'UGC Bundle — 4 Items (Jester Neck, Smile Mask, Emo Fedora, Emo Swordpack)',
+    rate: 240,
+    deadline: null,
+    payment: 'Prepaid',
+    notes: '4 UGC commissions bundled — All prepaid',
+    partner: true,
+    bundle: true
   }
 ];
 
