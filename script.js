@@ -3,8 +3,8 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 8,
-  estimatedWait: '4-6 weeks',
+  activeCommissions: 4,
+  estimatedWait: '1-2 weeks',
   lastUpdated: new Date().toISOString(),
 };
 
@@ -148,85 +148,16 @@ console.log('%cInterested in working together? DM me on Discord.', 'font-size: 1
 // Active Commissions Data - Sorted by Priority
 // Priority order: 1) Bulk/Confirmed, 2) Delivered awaiting payment, 3) High priority, 4) Medium priority, 5) Normal
 const activeCommissions = [
-  // 💜 TOP PRIORITY — Bulk Order (Now at TOP of queue)
+  // 💜 TOP PRIORITY — Bulk Order (7 Survivors done, $700 paid)
   {
     client: 'Kenton',
-    project: 'Bulk Order — 4 Killers + 8 Survivors',
-    rate: 1400,
+    project: 'Bulk Order — 4 Killers Remaining',
+    rate: 600,
     deadline: null,
-    payment: 'After',
-    notes: '12 total characters from Survival Game — CONFIRMED',
+    payment: '$700 Paid (7 Survivors ✅)',
+    notes: '7 of 11 characters completed — 4 Killers left in queue',
     partner: true,
     topPriority: true
-  },
-  // ✅ DELIVERED — Awaiting Payment
-  {
-    client: 'Combat Warriors',
-    project: 'VFX Wave Model',
-    rate: 70,
-    deadline: null,
-    payment: 'Delivered — Awaiting Payment',
-    notes: 'Realistic texture — Ready to invoice ($60-80)',
-    partner: false,
-    delivered: true
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Easter Egg Grenade (Impact)',
-    rate: 70,
-    deadline: null,
-    payment: 'Delivered — Awaiting Payment (Easter Batch)',
-    notes: 'Easter Commission — DONE, payment after all Easter items complete',
-    partner: false,
-    delivered: true
-  },
-  // 🟡 MEDIUM PRIORITY (Easter Commissions — In Progress)
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Spear',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Dragon Slayer',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Katar',
-    rate: 60,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission',
-    partner: false
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Sea Beast Bunny',
-    rate: null,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission — Pending details',
-    partner: false
-  },
-  // ⚪ NORMAL PRIORITY (UGC Bundle — Prepaid)
-  {
-    client: 'Kenton',
-    project: 'UGC Bundle — 4 Items (Jester Neck, Smile Mask, Emo Fedora, Emo Swordpack)',
-    rate: 240,
-    deadline: null,
-    payment: 'Prepaid',
-    notes: '4 UGC commissions bundled — All prepaid',
-    partner: true,
-    bundle: true
   }
 ];
 
