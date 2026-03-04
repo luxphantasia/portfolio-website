@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 5,
+  activeCommissions: 3,
   estimatedWait: '1-2 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -146,69 +146,20 @@ console.log('%cBuilt with ☕ and late nights.', 'font-size: 12px; color: #666;'
 console.log('%cInterested in working together? DM me on Discord.', 'font-size: 12px; color: #666;');
 
 // Active Commissions Data - Sorted by Priority
-// Priority order: 1) Bulk/Confirmed, 2) Delivered awaiting payment, 3) High priority, 4) Medium priority, 5) Normal
+// Priority order: 1) Bulk/Confirmed, 2) In Progress, 3) Normal
 const activeCommissions = [
-  // 💜 TOP PRIORITY — Bulk Order (7 Survivors done, $700 paid)
+  // 💜 TOP PRIORITY — Bulk Order (7 Survivors done, 4 Killers remaining)
   {
     client: 'Kenton',
     project: 'Bulk Order — 4 Killers Remaining',
     rate: 600,
     deadline: null,
-    payment: '$700 Paid (7 Survivors ✅)',
+    payment: 'Partial Payment Received',
     notes: '7 of 11 characters completed — 4 Killers left in queue',
     partner: true,
     topPriority: true
   },
-  // ✅ DELIVERED — Awaiting Payment
-  {
-    client: 'Combat Warriors',
-    project: 'VFX Wave Model',
-    rate: 70,
-    deadline: null,
-    payment: 'Delivered — Awaiting Payment',
-    notes: 'Realistic texture — Ready to invoice ($60-80)',
-    partner: false,
-    delivered: true
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Easter Egg Grenade (Impact)',
-    rate: 70,
-    deadline: null,
-    payment: 'Delivered — Awaiting Payment (Easter Batch)',
-    notes: 'Easter Commission — DONE, payment after all Easter items complete',
-    partner: false,
-    delivered: true
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Dragon Slayer',
-    rate: 90,
-    deadline: null,
-    payment: 'Delivered — Awaiting Payment (Easter Batch)',
-    notes: 'Easter Commission — DONE',
-    partner: false,
-    delivered: true
-  },
-  // 🟡 MEDIUM PRIORITY (Easter Commissions — In Progress)
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Spear',
-    rate: 80,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission — In Progress',
-    partner: false
-  },
-  {
-    client: 'Combat Warriors',
-    project: 'Carrot Katar',
-    rate: 80,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission — In Progress',
-    partner: false
-  },
+  // 🟡 IN PROGRESS (Easter Commissions)
   {
     client: 'Combat Warriors',
     project: 'Sea Beast Bunny',
