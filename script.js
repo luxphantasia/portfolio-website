@@ -3,7 +3,7 @@
 // Commission status data (will be connected to live data later)
 const commissionData = {
   status: 'open', // open, closed, limited
-  activeCommissions: 3,
+  activeCommissions: 2,
   estimatedWait: '1-2 weeks',
   lastUpdated: new Date().toISOString(),
 };
@@ -147,6 +147,7 @@ console.log('%cInterested in working together? DM me on Discord.', 'font-size: 1
 
 // Active Commissions Data - Sorted by Priority
 // Priority order: 1) Bulk/Confirmed, 2) In Progress, 3) Normal
+// Last updated: March 11, 2026
 const activeCommissions = [
   // 💜 TOP PRIORITY — Bulk Order (7 Survivors done, 4 Killers remaining)
   {
@@ -154,29 +155,19 @@ const activeCommissions = [
     project: 'Bulk Order — 4 Killers Remaining',
     rate: 600,
     deadline: null,
-    payment: 'Partial Payment Received',
-    notes: '7 of 11 characters completed — 4 Killers left in queue',
+    payment: '✅ Fully Paid',
+    notes: '7 of 11 characters completed — Awaiting concepts/references to start Killers',
     partner: true,
     topPriority: true
   },
-  // 🟡 IN PROGRESS (Easter Commissions)
-  {
-    client: 'Combat Warriors',
-    project: 'Sea Beast Bunny',
-    rate: 200,
-    deadline: null,
-    payment: 'After',
-    notes: 'Easter Commission — Pending details',
-    partner: false
-  },
-  // ⚪ NORMAL PRIORITY (UGC Bundle — Prepaid)
+  // ⚪ NORMAL PRIORITY (UGC Bundle — Prepaid, 1/4 done)
   {
     client: 'Kenton',
-    project: 'UGC Bundle — 4 Items (Jester Neck, Smile Mask, Emo Fedora, Emo Swordpack)',
+    project: 'UGC Bundle — 3 Items Pending (Jester Neck, Smile Mask, Emo Fedora)',
     rate: 240,
     deadline: null,
-    payment: 'Prepaid',
-    notes: '4 UGC commissions bundled — All prepaid',
+    payment: '✅ Prepaid',
+    notes: 'Emo Swordpack complete — 3 items remaining',
     partner: true,
     bundle: true
   }
